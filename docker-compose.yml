@@ -1,0 +1,13 @@
+version: '3'
+services:
+  social-network-frontend:
+    image: social-network-frontend:latest
+    environment:
+      PORT: 8080
+      PROXY_API: http://social-network-backend:5000/
+    ports:
+      - 8080:8080
+  social-network-backend:
+    image: social-network-backend:latest
+    ports:
+      - 5000:5000
